@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Edge</string>
+    <string name="title_home">Home</string>
+    <string name="title_journal">Journal</string>
+    <string name="title_reads">Reads</string>
+    <string name="title_helplines">Helplines</string>
+</resources>
