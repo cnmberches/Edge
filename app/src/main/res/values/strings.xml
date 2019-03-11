@@ -4,4 +4,25 @@
     <string name="title_journal">Journal</string>
     <string name="title_reads">Reads</string>
     <string name="title_helplines">Helplines</string>
+    <string name="journal_btn_create">Create new journal</string>
+    <string name="journal_card_content">Journal Content</string>
+    <string name="journal_card_date">Journal Date</string>
+    <string name="home_add_mood">Add mood</string>
+    <string name="home_daily_task">Daily task</string>
+    <string name="home_daily_task_start">Start</string>
+    <string name="journal_empty_state_title">It\'s empty in here</string>
+    <string name="journal_empty_state_subtitle">Start by writing about your experiences and feelings throughout the day.</string>
+    <string name="home_your_mood">Your mood</string>
+    <string name="home_minigames">Mini games</string>
+    <string name="reads_read_about">Read about</string>
+    <string name="reads_title_stress">Stress</string>
+    <string name="reads_title_anxiety">Anxiety</string>
+    <string name="reads_title_depression">Depression</string>
+    <string name="helplines_hopeline_philippines">Hopeline Philippines</string>
+    <string name="helplines_telephone">(02) 804 HOPE (4673)</string>
+    <string name="helplines_cellphone">0917 558 HOPE (4673)</string>
+    <string name="helplines_pap">Psychological Association of the Philippines</string>
+    <string name="helplines_call">Call</string>
+    <string name="helplines_message">Message</string>
+    <string name="helplines_ppa">Philippine Psychiatric Association</string>
 </resources>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context=".FragmentJournal">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/journal_nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="ifContentScrolls"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/home_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Date today"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorOnLightSecondary"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"/>
+
+            <LinearLayout
+                android:id="@+id/home_quote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/home_quote_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Some quote here"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/colorAccent"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+                <TextView
+                    android:id="@+id/home_quote_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="And its author"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/colorOnLightSecondary"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/home_mood_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/CardViewDefaultStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/home_your_mood_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="@string/home_your_mood"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/colorOnLightSecondary"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:drawableStart="@drawable/ic_mood_18dp"
+                        android:drawablePadding="12dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorOnLightStroke"/>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/mood_line_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorOnLightStroke"/>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/mood_bar_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorOnLightStroke"/>
+
+                    <LinearLayout
+                        android:id="@+id/btn_add_mood"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal"
+                        android:background="?attr/selectableItemBackground"
+                        style="?android:attr/buttonBarButtonStyle">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_add"
+                            android:tint="@color/colorAccent"
+                            android:layout_marginEnd="8dp"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_add_mood"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/home_daily_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/CardViewDefaultStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="112dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:background="@drawable/img_task_001">
+
+                            <!--ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:src="@drawable/img_task_001"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                tools:ignore="ContentDescription" /-->
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/home_daily_task_scrim"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/home_daily_task_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:text="@string/home_daily_task"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/colorOnLightSecondary"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                                android:drawableStart="@drawable/ic_event_18dp"
+                                android:drawablePadding="12dp" />
+
+                            <TextView
+                                android:id="@+id/home_daily_task_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Breathe in... Breathe out..."
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+                            <TextView
+                                android:id="@+id/home_daily_task_subtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Practice breathing for 5 minutes"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/colorOnLightSecondary"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorOnLightStroke"/>
+
+                    <LinearLayout
+                        android:id="@+id/btn_start_daily_task"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal"
+                        android:background="?attr/selectableItemBackground"
+                        style="?android:attr/buttonBarButtonStyle">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_start"
+                            android:tint="@color/colorAccent"
+                            android:layout_marginEnd="8dp"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_daily_task_start"
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/CardViewDefaultStyle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/home_mini_games_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/home_minigames"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/colorOnLightSecondary"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:drawableStart="@drawable/ic_minigame_18dp"
+                        android:drawablePadding="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                style="@style/CardViewDefaultStyle"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:text="@string/app_name"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorOnLightPrimary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

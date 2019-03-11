@@ -9,22 +9,11 @@
     android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <include
+        layout="@layout/content_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"
-        android:elevation="0dp">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:scaleType="centerInside"
-            app:lottie_rawRes="@raw/edge_splash_animation_on_light"
-            app:lottie_loop="false"
-            app:lottie_autoPlay="true"/>
-
-    </FrameLayout>
+        android:layout_marginBottom="?attr/actionBarSize"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
@@ -40,6 +29,7 @@
         app:labelVisibilityMode="labeled"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"

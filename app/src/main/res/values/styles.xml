@@ -7,12 +7,25 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDarker</item>
         <item name="android:navigationBarColor">@color/colorDark</item>
+        <item name="colorControlHighlight">@color/colorAccentRipple</item>
+        <item name="android:colorEdgeEffect">@color/colorAccent</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.Design.BottomNavigationView">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="colorControlHighlight">@color/colorAccentRipple</item>
+    </style>
+
+    <style name="RippleLLButton" parent="Base.Widget.AppCompat.ButtonBar">
+        <item name="colorControlHighlight">@color/colorAccentRipple</item>
+    </style>
+
+    <style name="CardViewDefaultStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
     </style>
 
 </resources>
